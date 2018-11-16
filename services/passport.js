@@ -27,11 +27,14 @@ passport.deserializeUser((id, done) => {
 });
 
 // The callback function will be executed after '/auth/google/callback'
+// proxy: true is due to the Google Strategy changing an https request to an 
+// http request because a request goes through Heroku's proxy.
 passport.use(
   new GoogleStrategy({ 
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
+    callbackURL: '/auth/google/callback',
+    proxy: true
   }, (accessToken, refreshToken, profile, done) => {
     User.findOne({ googleId: profile.id })
       .then((existingUser) => {
