@@ -1,0 +1,55 @@
+.user-info{
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+.profile-picture{
+  position: relative;
+  float:left;
+}
+
+.profile-picture img{
+  border-radius: 50%;
+  object-fit: cover;
+  height: 120px;
+  width: 120px;
+}
+
+.edit-profile{
+  position: absolute;
+  margin-top: 80%;
+  margin-left: 70%;
+}
+
+.name-bio{
+  float: left;
+  margin-left: 3%;
+}
+
+.name-bio h4{
+  color: white;
+}
+
+.name-bio p{
+  color: white;
+}
+
+.upload{
+  float: right;
+  margin-right: 10%;
+  margin-top: 3%;
+}
+
+.upload-button{
+  margin-left: 4%;
+}
+
+.upload-header p{
+  color: white;
+}
+
+.user-info::after{
+  content: "";
+  display: block;
+  clear: both;
+}

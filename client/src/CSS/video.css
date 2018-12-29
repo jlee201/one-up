@@ -1,0 +1,66 @@
+h4{
+  color: white;
+}
+
+h5{
+  color: white;
+}
+
+.rank {
+  float: left;
+  margin-left: 2%;
+  margin-top: 4%;
+}
+
+.video-player {
+  margin-left: 5%;
+  margin-top: 1%;
+  float: left;
+}
+
+.description {
+  margin-top: 5%;
+  margin-left: 1%;
+  float: left;
+}
+
+.description p{
+  color: white;
+  font-family: Helvetica;
+  font-size: 10px;
+}
+
+.votes {
+  float: right;
+  margin-top: 3%;
+  margin-right: 2%;
+}
+
+.votes h5{
+  margin-top: 6%;
+}
+
+#upvote i{
+  font-size: 3em;
+  color: green;
+}
+
+#upvote i:hover{
+  color: #51FF0D;
+}
+
+#downvote i{
+  margin-top: 0%;
+  font-size: 3em;
+  color: #B30000;
+}
+
+#downvote i:hover{
+  color: #FF6666;
+}
+
+.video-wrapper::after{
+  content: "";
+  display: block;
+  clear: both;
+}

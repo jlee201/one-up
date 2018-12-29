@@ -17,7 +17,7 @@ passport.serializeUser((user, done) => {
 // take identifying piece of information from user's cookie, and turn it into a user 
 // or a mongo model instance.
 // executed when the client makes ANY request to the server,
-// keeps track of whether a user is signed in or not
+// keeps track of whether a user is signed in or not. It is middelware that intercepts the request.
 passport.deserializeUser((id, done) => {
   User.findById(id).then(user => {
       // user model instance added to req object as 'req.user'
@@ -30,23 +30,23 @@ passport.deserializeUser((id, done) => {
 // proxy: true is due to the Google Strategy changing an https request to an 
 // http request because a request goes through Heroku's proxy.
 passport.use(
-  new GoogleStrategy({ 
-    clientID: keys.googleClientID,
-    clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback',
-    proxy: true
-  }, (accessToken, refreshToken, profile, done) => {
-    User.findOne({ googleId: profile.id })
-      .then((existingUser) => {
-        if (existingUser) {
-          // done indicates that everything is done, proceed with the authentication process
-          // the first argument are any errors that occur, the second argument is the user
-          done(null, existingUser);
-        } else {
-          new User({ googleId: profile.id }).save()
-            .then(user => done(null, user));
-        }
-      });
+    new GoogleStrategy({ 
+      clientID: keys.googleClientID,
+      clientSecret: keys.googleClientSecret,
+      callbackURL: '/auth/google/callback',
+      proxy: true
+    }, 
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ googleId: profile.id, name: profile.displayName })
+
+      if (existingUser) {
+        // done indicates that everything is done, proceed with the authentication process
+        // the first argument are any errors that occur, the second argument is the user
+        return done(null, existingUser);
+      } 
+  
+      const user = await new User({ googleId: profile.id, name: profile.displayName }).save()
+      done(null, user);
     }
   )
 );

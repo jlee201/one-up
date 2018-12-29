@@ -1,0 +1,23 @@
+p{
+  margin-left: 2%;
+  color: white;
+}
+
+.profile-upvoted-videos-wrapper h4{
+  margin-left: 2%;
+}
+
+.scrolling-upvoted-wrapper{
+  margin-top: 3%;
+  padding-top: 2%;
+  border: 1px solid white;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.scrolling-upvoted-wrapper .video{
+  display: inline-block;
+  margin-left: 1%;
+  margin-right: 1%;
+}

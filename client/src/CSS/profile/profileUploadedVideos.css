@@ -1,0 +1,28 @@
+p{
+  margin-left: 2%;
+  color: white;
+}
+
+.profile-uploaded-videos-wrapper{
+  margin-top: 8%;
+  margin-bottom: 5%;
+}
+
+.profile-uploaded-videos-wrapper h4{
+  margin-left: 2%;
+}
+
+.scrolling-uploaded-wrapper{
+  margin-top: 3%;
+  padding-top: 2%;
+  border: 1px solid white;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.scrolling-uploaded-wrapper .video{
+  display: inline-block;
+  margin-left: 1%;
+  margin-right: 1%;
+}
