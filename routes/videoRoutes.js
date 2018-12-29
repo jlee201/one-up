@@ -75,7 +75,6 @@ module.exports = (app) => {
             }
 
             // console.log(files.video.path);
-            console.log(fields);
 
             const uploader = keys.cloudinaryCloudName;
 
@@ -86,8 +85,6 @@ module.exports = (app) => {
                     folder: keys.cloudinaryVideosFolder
                 },
                 async (error, result) => {
-                    console.log(result);
-
                     var today = new Date();
                     var dd = today.getDate();
                     var mm = today.getMonth() + 1;
