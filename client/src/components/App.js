@@ -7,16 +7,11 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Home from './Home';
+import About from './About';
 import Profile from './Profile/Profile';
 import Upload from './Upload';
 import EditProfile from './EditProfile';
 
-
-const About = () => {
-  return (
-    <h2 style={{color: "white"}}>About</h2>
-  )
-}
 
 // BrowserRouter expects one child, must wrap routes in a div
 class App extends Component {
