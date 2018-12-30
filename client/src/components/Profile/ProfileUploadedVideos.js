@@ -22,7 +22,7 @@ class ProfileUploadedVideos extends Component {
   renderUploadedVideos() {
     return this.props.profileUploadedVideos.map(video => {
       return (
-          <div className="video">
+          <div className="video" key={video._id}>
             <ProfileVideo
               key={video._id}
               id={video._id}

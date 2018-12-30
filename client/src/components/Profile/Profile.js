@@ -19,6 +19,7 @@ class Profile extends Component {
               <div className="profile-picture">
                 <img className="profile-picture"
                   src={this.props.auth.profilePictureSRC}
+                  alt={this.props.auth.profilePictureSRC.default}
                 ></img>
 
                 <div className="edit-profile">

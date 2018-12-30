@@ -45,7 +45,6 @@ class Header extends Component {
 // case we're taking the auth property out of the state.
 // In essence, we're returning { auth: state.auth }. Simplified version below.
 function mapStateToProps({ auth }) {
-  console.log(auth);
   return { auth };
 }
 
