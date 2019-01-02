@@ -1,6 +1,6 @@
 # OneUp 
 
-The current website was recently deployed via Heroku. The app domain is below: 
+The website was recently deployed via Heroku. The app domain is below: 
 
 https://boiling-hollows-87458.herokuapp.com/
 
